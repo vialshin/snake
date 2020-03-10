@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tkinter import Tk, Canvas
 import random
 
@@ -29,6 +30,7 @@ def main():
         # Check for collision with gamefield edges
         if x2 > WIDTH or x1 < 0 or y1 < 0 or y2 > HEIGHT:
             IN_GAME = False
+            
         # Eating apples
         elif head_coords == c.coords(BLOCK):
             s.add_segment()
@@ -133,7 +135,7 @@ c = Canvas(root, width=WIDTH, height=HEIGHT, bg="#003300")
 c.grid()
 # catch keypressing
 c.focus_set()
-game_over_text = c.create_text(WIDTH/2, HEIGHT/2, text="WASTED",
+game_over_text = c.create_text(WIDTH/2, HEIGHT/2, text="Wasted",
                                font='Arial 20', fill='red',
                                state='hidden')
 restart_text = c.create_text(WIDTH/2, HEIGHT-HEIGHT/3,
